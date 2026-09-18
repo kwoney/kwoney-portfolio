@@ -71,7 +71,7 @@ const projects: Project[] = [
     ],
     results: ["단독으로 모바일 앱과 백엔드·운영 구조 완성", "약 300명 커뮤니티 운영 경험을 제품 요구사항에 반영", "2026.08 · 모두의 창업 소셜벤처리그 서류 합격"],
     links: [
-      { label: "실제 서비스", href: "https://kozit.app", primary: true },
+      { label: "웹사이트", href: "https://kozit.app", primary: true },
       { label: "시연 영상", href: "https://youtube.com/shorts/rlK_qPIgyKg" },
     ],
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "Toss Payments", "DeepL", "Amplitude", "Sentry"],
@@ -240,7 +240,7 @@ export default function ProjectTabs() {
             <p className="eyebrow">{active.type}</p>
             <h3>{active.name}</h3>
             <p className="project-role">{active.period}<span>·</span>{active.role}</p>
-            {active.id === "miary" && <p className="private-label">코드 비공개 · develop 기준</p>}
+            {active.id === "miary" && <p className="private-label">소스 코드 비공개</p>}
           </div>
           <div className="project-links">
             {active.links.map((link) => (
