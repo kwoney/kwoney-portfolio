@@ -154,9 +154,9 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
 .hero-bottom { display:flex; flex-direction:column; align-items:flex-start; gap:28px; }
 .hero-intro { width:min(760px,100%); font-size:18px; line-height:1.9; color:var(--muted); }
 .hero-intro strong { color:var(--ink); }
-.hero-actions { gap:16px; }
+.hero-actions { gap:8px; }
 .hero-actions .button { min-height:48px; font-size:13px; }
-.hero-actions .button.email-link { position:relative; min-width:0; padding-inline:4px; border:0; }
+.hero-actions .button.email-link { position:relative; min-width:0; padding-inline:6px; border:0; }
 .hero-actions .email-link::after { content:""; position:absolute; left:4px; right:4px; bottom:8px; height:1px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform .2s ease; }
 .hero-actions .email-link:hover::after,.hero-actions .email-link:focus-visible::after { transform:scaleX(1); }
 .section { grid-template-columns:150px 1fr; gap:50px; padding-top:110px; padding-bottom:110px; }
@@ -362,6 +362,7 @@ section[id] { scroll-margin-top:80px; }
   .hero-kicker { font-size:12px; letter-spacing:.03em; }
   .hero-actions { flex-direction:row; }
   .hero-actions .button { width:auto; white-space:nowrap; padding:0 16px; gap:16px; }
+  .hero-actions .button.email-link { padding-inline:4px; }
   .hero-actions .button.primary { flex:0 0 auto; }
   .wordmark strong { font-size:15px; }
   .wordmark>span { font-size:12px; }
