@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import ImplementationCases from "./ImplementationCases";
 
 type Project = {
   id: string;
@@ -274,15 +275,17 @@ export default function ProjectTabs() {
           </div>
         </section>
 
+        <ImplementationCases projectId={active.id} key={active.id} />
+
         <section className="tech-section" aria-labelledby={`tech-${active.id}`}>
-          <div className="subsection-heading"><span>02</span><h4 id={`tech-${active.id}`}>기술을 실제로 사용한 방식</h4></div>
+          <div className="subsection-heading"><span>03</span><h4 id={`tech-${active.id}`}>기술을 실제로 사용한 방식</h4></div>
           <div className="tech-action-list">
             {active.tech.map((item) => <div className="tech-action" key={item.name}><h5>{item.name}</h5><p>{item.action}</p></div>)}
           </div>
         </section>
 
         <section className="result-section" aria-labelledby={`result-${active.id}`}>
-          <div className="subsection-heading"><span>03</span><h4 id={`result-${active.id}`}>구현 결과</h4></div>
+          <div className="subsection-heading"><span>04</span><h4 id={`result-${active.id}`}>구현 결과</h4></div>
           <div className="result-grid">{active.results.map((result, index) => <article className="result-card" key={result}><span className="result-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><p>{result}</p></article>)}</div>
         </section>
 

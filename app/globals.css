@@ -197,6 +197,35 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
 .project-problem>span { font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; }
 .project-problem p { max-width:780px; color:var(--ink); }
 .feature-section,.tech-section,.result-section { padding-top:66px; }
+.case-section { padding-top:66px; }
+.case-intro { margin:0 0 24px; color:var(--muted); font-size:16px; line-height:1.8; }
+.case-list { border-top:1px solid var(--ink); }
+.implementation-case { border-bottom:1px solid var(--line); }
+.implementation-case summary { display:flex; align-items:center; gap:18px; padding:26px 0; cursor:pointer; list-style:none; }
+.implementation-case summary::-webkit-details-marker { display:none; }
+.implementation-case summary:focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+.case-number { font-size:17px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.case-summary { display:grid; gap:8px; flex:1; min-width:0; }
+.case-summary strong { font-size:20px; line-height:1.6; }
+.case-summary>span { color:var(--muted); font-size:15px; line-height:1.6; }
+.case-toggle { position:relative; width:24px; height:24px; flex-shrink:0; }
+.case-toggle::before,.case-toggle::after { content:""; position:absolute; background:var(--ink); top:11px; left:4px; width:16px; height:2px; }
+.case-toggle::after { transform:rotate(90deg); }
+.implementation-case[open] .case-toggle::after { transform:none; }
+.implementation-case[open] summary { color:#46624d; }
+.case-body { padding:0 0 30px 38px; }
+.case-technology { margin:0 0 24px; padding:12px 16px; border-left:3px solid var(--project-accent); font-size:15px; line-height:1.8; background:rgba(22,23,20,.035); }
+.case-body dl { margin:0; }
+.case-body dl>div { display:grid; grid-template-columns:120px minmax(0,1fr); gap:24px; margin-top:20px; }
+.case-body dt { font-weight:700; font-size:16px; line-height:1.85; }
+.case-body dd { margin:0; color:#57594f; font-size:17px; line-height:1.85; }
+@media(max-width:560px) {
+  .implementation-case summary { gap:12px; }
+  .case-summary strong { font-size:18px; }
+  .case-summary>span { font-size:14px; }
+  .case-body { padding-left:0; }
+  .case-body dl>div { grid-template-columns:1fr; gap:6px; }
+}
 .subsection-heading { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
 .subsection-heading>span { flex:0 0 auto; color:var(--muted); font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; }
 .subsection-heading h4 { margin:0; font-size:24px; letter-spacing:-.035em; }
