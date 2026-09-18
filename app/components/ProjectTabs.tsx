@@ -72,7 +72,6 @@ const projects: Project[] = [
     results: ["단독으로 모바일 앱과 백엔드·운영 구조 완성", "약 300명 커뮤니티 운영 경험을 제품 요구사항에 반영", "결제·보안·관측성까지 포함한 출시 전 검증 단계"],
     links: [
       { label: "실제 서비스", href: "https://kozit.app", primary: true },
-      { label: "서비스 소개", href: "https://github.com/kwoney/kozit-landing" },
     ],
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "Toss Payments", "DeepL", "Amplitude", "Sentry"],
     accent: "coral",
@@ -125,7 +124,7 @@ const projects: Project[] = [
       { name: "LangGraph · MCP", action: "정보 추출·검색·자격 확인을 각각 도구로 분리하고, 대화 상태에 따라 필요한 도구를 호출하는 에이전트를 서비스에 연동했습니다." },
     ],
     results: ["정책 탐색·저장·일정 관리의 주요 화면 구현", "프론트엔드와 Django API를 함께 개발", "추천 결과와 자격 판단 근거를 사용자 화면에 연결"],
-    links: [{ label: "GitHub", href: "https://github.com/yongjunan111/4brain-welfare", primary: true }],
+    links: [{ label: "내 포크", href: "https://github.com/kwoney/4brain-welfare", primary: true }, { label: "팀 원본", href: "https://github.com/yongjunan111/4brain-welfare" }],
     stack: ["Next.js", "TypeScript", "Django", "PostgreSQL", "LangGraph", "MCP", "Kakao Map"],
     accent: "green",
   },
@@ -165,7 +164,7 @@ const projects: Project[] = [
         items: [
           "JWT 인증과 역할에 따른 사용자·관리자 화면 분리",
           "MySQL 데이터를 PostgreSQL 구조로 전환하고 쿼리 호환성 수정",
-          "프론트·Spring·DB·NLP·STT 서비스를 Docker Compose로 연결",
+          "React·Spring·NLP·챗봇·STT의 다섯 앱 서비스 구성과 개발 브랜치의 PostgreSQL 컨테이너 추가",
           "신고 일기와 사용자·태그·모델을 관리하는 관리자 화면",
         ],
       },
@@ -174,12 +173,12 @@ const projects: Project[] = [
       { name: "React · TipTap", action: "기록에 집중할 수 있는 편집기와 캘린더·책·지도 형태의 탐색 화면을 만들고 분석 결과가 같은 경험 안에서 이어지게 했습니다." },
       { name: "Spring Boot · MyBatis", action: "JWT 인증, 일기·사진·감정·키워드 API와 분석 서버 호출을 연결하고 데이터 변경 이벤트를 서비스 로직에 반영했습니다." },
       { name: "PostgreSQL", action: "기존 MySQL 구조를 PostgreSQL로 옮기며 설정, 스키마와 쿼리를 함께 수정해 프로젝트 종료 후에도 실행 가능한 상태로 정비했습니다." },
-      { name: "Python NLP · Flask", action: "감정 분석 데이터와 파이프라인을 정리하고 API를 복구해 분석 결과가 Spring 백엔드를 거쳐 일기 상세에 저장·표시되게 했습니다." },
-      { name: "Docker Compose", action: "기술 스택이 다른 다섯 서비스를 컨테이너 단위로 실행하고 공통 네트워크와 환경 설정으로 연결했습니다." },
+      { name: "Python NLP · FastAPI", action: "감정 분석 데이터와 파이프라인을 정리하고 API를 복구해 분석 결과가 Spring 백엔드를 거쳐 일기 상세에 저장·표시되게 했습니다. 개선 코드는 develop 브랜치에서 확인할 수 있습니다." },
+      { name: "Docker Compose", action: "React·Spring·NLP·챗봇·STT의 다섯 앱 서비스를 공통 네트워크로 구성했습니다. develop에는 PostgreSQL 컨테이너가 추가되어 있으며, 현재 실행 설정에는 DB 연결과 NLP 시작 명령의 정비가 필요합니다." },
     ],
     results: ["DB 전환과 백엔드 호환성 수정", "NLP 분석 파이프라인 복구 및 화면 연동", "기록·분석·회고로 이어지는 핵심 흐름 구현"],
-    links: [{ label: "GitHub", href: "https://github.com/kwoney/miary", primary: true }],
-    stack: ["React", "Spring Boot", "MyBatis", "PostgreSQL", "Python", "Flask", "Docker", "Kakao Map"],
+    links: [{ label: "개선 코드 · develop", href: "https://github.com/kwoney/miary/tree/develop", primary: true }, { label: "GitHub", href: "https://github.com/kwoney/miary" }],
+    stack: ["React", "Spring Boot", "MyBatis", "PostgreSQL", "Python", "FastAPI", "Docker", "Kakao Map"],
     accent: "violet",
   },
 ];
@@ -243,7 +242,8 @@ export default function ProjectTabs() {
         </div>
 
         <section className="feature-section" aria-labelledby={`features-${active.id}`}>
-          <div className="subsection-heading"><span>01</span><h4 id={`features-${active.id}`}>직접 구현한 기능</h4></div>
+          <div className="subsection-heading"><span>01</span><h4 id={`features-${active.id}`}>{active.id === "kozit" ? "직접 구현한 기능" : "주요 기능과 참여 영역"}</h4></div>
+          {active.id !== "kozit" && <p className="contribution-note">팀 프로젝트의 기능 흐름을 함께 소개합니다. 위에 표시한 담당 영역을 중심으로 개발·개선·연동에 참여했으며, 팀 전체 기능의 단독 개발을 의미하지 않습니다.</p>}
           <div className="feature-columns">
             {active.features.map((group) => (
               <div className="feature-group" key={group.title}>
@@ -262,10 +262,11 @@ export default function ProjectTabs() {
         </section>
 
         <section className="result-section" aria-labelledby={`result-${active.id}`}>
-          <div className="subsection-heading"><span>03</span><h4 id={`result-${active.id}`}>결과와 배운 점</h4></div>
+          <div className="subsection-heading"><span>03</span><h4 id={`result-${active.id}`}>구현 결과</h4></div>
           <div className="result-grid">{active.results.map((result) => <p key={result}>{result}</p>)}</div>
         </section>
 
+        {active.id === "miary" && <div className="code-evidence"><h4>개선 코드 확인</h4><a href="https://github.com/kwoney/miary/commit/041502b" target="_blank" rel="noreferrer">PostgreSQL 전환 ↗</a><a href="https://github.com/kwoney/miary/commit/e6349ef" target="_blank" rel="noreferrer">NLP 파이프라인 연동 ↗</a><a href="https://github.com/kwoney/miary/commit/e68bdbc" target="_blank" rel="noreferrer">일기 상세에 분석 결과 표시 ↗</a></div>}
         <div className="stack-list" aria-label="사용 기술">{active.stack.map((item) => <span key={item}>{item}</span>)}</div>
       </article>
     </div>
