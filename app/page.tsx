@@ -54,9 +54,9 @@ export default function Home() {
 
     <section className="experience section shell" id="experience" aria-labelledby="experience-title">
       <div className="section-label"><span>03</span><p>Previous experience</p></div>
-      <div className="section-content"><p className="eyebrow">Korea Environment Corporation · 2021—2025</p><h2 id="experience-title">개발자가 되기 전에도<br />시스템을 설계했습니다.</h2>
+      <div className="section-content"><p className="eyebrow">한국환경공단 · 회계 담당 · 2021.09—2025.02</p><h2 id="experience-title">회계 실무에서 발견한 문제를<br />시스템 개선으로 연결했습니다.</h2>
         <div className="experience-grid"><div className="experience-numbers"><div><strong>84</strong><span>개 기관 규정 조사</span></div><div><strong>940</strong><span>매 출장카드 발급</span></div><div><strong>1,700<small>만 원</small></strong><span>연간 절감 효과</span></div></div>
-          <div className="experience-copy"><h3>모호한 제도 개선 과제를<br />실제 업무 시스템으로 만들었습니다.</h3><p>출장전용 법인카드 도입을 위해 84개 공공기관의 규정과 사례를 조사하고, 신청–승인–사용–정산–전표로 이어지는 업무 흐름을 설계했습니다.</p><p>지출 담당자, 개발업체, 은행, 정보부서와 기준과 일정을 조율했습니다. 이 경험은 요구사항을 화면과 데이터 구조로 번역하는 제 개발 방식의 기반입니다.</p></div>
+          <div className="experience-copy"><h3>회계 담당자로서,<br />업무 시스템 도입의 기획과 조율까지.</h3><p>법인카드 총괄, 지출·수입과 결산 업무를 담당했습니다. 회계 실무에서 쌓은 규정과 예외 처리에 대한 이해를 바탕으로 출장전용 법인카드 시스템 도입 과제를 맡았습니다.</p><p>84개 공공기관의 규정과 사례를 조사하고, 신청–승인–사용–정산–전표로 이어지는 업무 흐름과 화면별 요구사항을 정리해 개발업체에 전달했습니다.</p><p>지출 담당자·개발업체·은행·정보부서 사이에서 기준과 일정을 조율했습니다. 현업 담당자로서 요구사항 정의, 프로세스 설계, 이해관계자 조율 등 프로젝트 관리 역할을 함께 수행한 경험입니다.</p></div>
         </div>
       </div>
     </section>
