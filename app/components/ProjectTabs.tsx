@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import ImplementationCases from "./ImplementationCases";
 import ProjectFlow from "./ProjectFlow";
 
@@ -12,10 +12,10 @@ type Project = {
   period: string;
   role: string;
   headline: string;
-  description: string;
+  description: ReactNode;
   problem: string;
   features: { title: string; items: string[] }[];
-  tech: { name: string; action: string }[];
+  tech: { name: string; action: ReactNode }[];
   results: string[];
   links: { label: string; href: string; primary?: boolean }[];
   stack: string[];
@@ -31,8 +31,9 @@ const projects: Project[] = [
     period: "2026.03 — NOW",
     role: "기획·디자인·개발·운영 전 과정 단독 수행",
     headline: "낯선 도시에서 관계를 시작하는 전 과정을 제품으로 만들었습니다.",
-    description:
-      "장기 체류 외국인과 한국인이 관심사 기반 모임에서 만나는 모바일 커뮤니티입니다. 약 300명 규모의 커뮤니티를 직접 운영하며 언어 장벽, 참여 신뢰, 호스트 운영의 문제를 확인했고 이를 앱의 탐색·소통·결제 흐름으로 옮겼습니다.",
+    description: <>
+      장기 체류 외국인과 한국인이 관심사 기반 모임에서 만나는 모바일 커뮤니티입니다. <strong>약 300명 규모의 커뮤니티를 직접 운영하며</strong> 언어 장벽, 참여 신뢰, 호스트 운영의 문제를 확인했고 이를 앱의 탐색·소통·결제 흐름으로 옮겼습니다.
+    </>,
     problem:
       "단순한 모임 목록이나 번역 기능만으로는 실제 만남이 만들어지지 않았습니다. 참여 전 신뢰 형성, 다국어 소통, 결제 이후의 취소·환불, 호스트 정산까지 하나의 일관된 흐름이 필요했습니다.",
     features: [
@@ -65,11 +66,11 @@ const projects: Project[] = [
       },
     ],
     tech: [
-      { name: "Expo · React Native", action: "iOS와 Android에서 동일한 사용자 흐름을 제공하고, 화면·라우팅·푸시 알림을 하나의 TypeScript 코드베이스로 관리했습니다." },
-      { name: "Supabase", action: "Auth·PostgreSQL·Realtime·Storage·Edge Functions를 연결했습니다. RLS 정책을 기능별로 설계해 앱 코드 밖에서도 접근 권한을 검증합니다." },
-      { name: "DeepL · Edge Functions", action: "토큰을 앱에 노출하지 않고 서버에서 번역합니다. JWT 검증, 문자 수 제한, 배치 번역과 불필요한 요청 건너뛰기로 비용과 실패 범위를 줄였습니다." },
-      { name: "Toss Payments", action: "주문·결제·환불·정산 상태를 분리했습니다. 결제 승인 서버 검증, 중복 웹훅 방지, 가격·일정 잠금과 수수료 스냅샷을 적용했습니다." },
-      { name: "Amplitude · Sentry", action: "가입부터 모임 참여까지 주요 이벤트를 정의하고, 분석 코드의 실패가 앱 사용을 막지 않도록 오류를 분리해 수집했습니다." },
+      { name: "Expo · React Native", action: <>iOS와 Android에서 동일한 사용자 흐름을 제공하고, 화면·라우팅·푸시 알림을 <strong>하나의 TypeScript 코드베이스로 관리했습니다.</strong></> },
+      { name: "Supabase", action: <>Auth·PostgreSQL·Realtime·Storage·Edge Functions를 연결했습니다. RLS 정책을 기능별로 설계해 <strong>앱 코드 밖에서도 접근 권한을 검증합니다.</strong></> },
+      { name: "DeepL · Edge Functions", action: <><strong>토큰을 앱에 노출하지 않고 서버에서 번역합니다.</strong> JWT 검증, 문자 수 제한, 배치 번역과 불필요한 요청 건너뛰기로 비용과 실패 범위를 줄였습니다.</> },
+      { name: "Toss Payments", action: <>주문·결제·환불·정산 상태를 분리했습니다. <strong>결제 승인 서버 검증과 중복 웹훅 방지</strong>, 가격·일정 잠금과 수수료 스냅샷을 적용했습니다.</> },
+      { name: "Amplitude · Sentry", action: <>가입부터 모임 참여까지 주요 이벤트를 정의하고, <strong>분석 코드의 실패가 앱 사용을 막지 않도록</strong> 오류를 분리해 수집했습니다.</> },
     ],
     results: ["단독으로 모바일 앱과 백엔드·운영 구조 완성", "약 300명 커뮤니티 운영 경험을 제품 요구사항에 반영", "2026.08 · 모두의 창업 소셜벤처리그 서류 합격"],
     links: [
@@ -87,8 +88,9 @@ const projects: Project[] = [
     period: "2025.12 — 2026.03",
     role: "프론트엔드·백엔드·AI 서비스 연동",
     headline: "복잡한 복지 정책을 검색에서 자격 판단까지 이어지는 흐름으로 바꿨습니다.",
-    description:
-      "흩어진 복지 정책을 찾고, 사용자의 나이·소득·가구 정보에 따라 받을 수 있는 정책과 판단 근거를 확인하는 서비스입니다. 저는 화면과 Django API, 에이전트 연동을 오가며 주요 사용자 흐름을 구현했습니다.",
+    description: <>
+      흩어진 복지 정책을 찾고, 사용자의 나이·소득·가구 정보에 따라 받을 수 있는 정책과 판단 근거를 확인하는 서비스입니다. 저는 <strong>화면과 Django API, 에이전트 연동을 오가며 주요 사용자 흐름을 구현했습니다.</strong>
+    </>,
     problem:
       "정책명 검색만으로는 사용자가 자신에게 맞는 정책인지 알기 어려웠습니다. 질문 속 조건을 구조화하고 정책 검색 결과와 자격 판정을 연결하면서도, 탈락 이유를 이해할 수 있게 보여줘야 했습니다.",
     features: [
@@ -121,10 +123,10 @@ const projects: Project[] = [
       },
     ],
     tech: [
-      { name: "Next.js", action: "정책 검색·상세·지도·캘린더·마이페이지를 기능 단위로 나누고 API 로딩·오류·빈 상태까지 화면 흐름에 반영했습니다." },
-      { name: "Django REST Framework", action: "계정과 정책, 스크랩, 채팅 API를 구현해 사용자 프로필과 AI 추천 결과가 같은 데이터 모델을 사용하도록 연결했습니다." },
-      { name: "Rule-based matching", action: "정책 조건을 명시적인 규칙으로 판정하고 공통 함수를 서비스 전체에서 재사용해 결과와 탈락 이유가 일치하도록 개선했습니다." },
-      { name: "LangGraph · MCP", action: "정보 추출·검색·자격 확인을 각각 도구로 분리하고, 대화 상태에 따라 필요한 도구를 호출하는 에이전트를 서비스에 연동했습니다." },
+      { name: "Next.js", action: <>정책 검색·상세·지도·캘린더·마이페이지를 기능 단위로 나누고 <strong>API 로딩·오류·빈 상태까지 화면 흐름에 반영했습니다.</strong></> },
+      { name: "Django REST Framework", action: <>계정과 정책, 스크랩, 채팅 API를 구현해 <strong>사용자 프로필과 AI 추천 결과가 같은 데이터 모델을 사용하도록 연결했습니다.</strong></> },
+      { name: "Rule-based matching", action: <>정책 조건을 명시적인 규칙으로 판정하고 공통 함수를 서비스 전체에서 재사용해 <strong>결과와 탈락 이유가 일치하도록 개선했습니다.</strong></> },
+      { name: "LangGraph · MCP", action: <>정보 추출·검색·자격 확인을 각각 도구로 분리하고, <strong>대화 상태에 따라 필요한 도구를 호출하는 에이전트</strong>를 서비스에 연동했습니다.</> },
     ],
     results: ["정책 탐색·저장·일정 관리의 주요 화면 구현", "프론트엔드와 Django API를 함께 개발", "추천 결과와 자격 판단 근거를 사용자 화면에 연결"],
     links: [{ label: "GitHub · 팀 저장소", href: "https://github.com/yongjunan111/4brain-welfare", primary: true }],
@@ -139,8 +141,9 @@ const projects: Project[] = [
     period: "2025.08 — CONTINUED",
     role: "프론트엔드 중심·DB·NLP 파이프라인 연동",
     headline: "일기 작성부터 감정 분석과 회고까지 여러 서비스를 하나의 경험으로 연결했습니다.",
-    description:
-      "일기 내용을 분석해 감정 흐름을 보여주고 AI 대화를 통해 기록을 돌아보게 하는 웹 서비스입니다. 교육 과정 종료 후에도 MySQL을 PostgreSQL로 전환하고 끊어졌던 NLP 분석 흐름을 복구했습니다.",
+    description: <>
+      일기 내용을 분석해 감정 흐름을 보여주고 AI 대화를 통해 기록을 돌아보게 하는 웹 서비스입니다. <strong>교육 과정 종료 후에도 MySQL을 PostgreSQL로 전환하고 끊어졌던 NLP 분석 흐름을 복구했습니다.</strong>
+    </>,
     problem:
       "프론트엔드, Spring 백엔드, NLP, 챗봇, STT가 나뉜 구조에서 같은 일기와 분석 결과를 안정적으로 주고받아야 했습니다. 초기 구현 이후에도 실행 환경과 데이터베이스 차이로 끊어진 흐름을 다시 맞추는 작업이 필요했습니다.",
     features: [
@@ -173,11 +176,11 @@ const projects: Project[] = [
       },
     ],
     tech: [
-      { name: "React · TipTap", action: "기록에 집중할 수 있는 편집기와 캘린더·책·지도 형태의 탐색 화면을 만들고 분석 결과가 같은 경험 안에서 이어지게 했습니다." },
-      { name: "Spring Boot · MyBatis", action: "JWT 인증, 일기·사진·감정·키워드 API와 분석 서버 호출을 연결하고 데이터 변경 이벤트를 서비스 로직에 반영했습니다." },
-      { name: "PostgreSQL", action: "기존 MySQL 구조를 PostgreSQL로 옮기며 설정, 스키마와 쿼리를 함께 수정해 프로젝트 종료 후에도 실행 가능한 상태로 정비했습니다." },
-      { name: "Python NLP · FastAPI", action: "감정 분석 데이터와 파이프라인을 정리하고 API를 복구해 분석 결과가 Spring 백엔드를 거쳐 일기 상세에 저장·표시되게 했습니다. 개선 코드는 develop 브랜치에서 확인할 수 있습니다." },
-      { name: "Docker Compose", action: "React·Spring·NLP·챗봇·STT의 다섯 앱 서비스를 공통 네트워크로 구성했습니다. develop에는 PostgreSQL 컨테이너가 추가되어 있으며, 현재 실행 설정에는 DB 연결과 NLP 시작 명령의 정비가 필요합니다." },
+      { name: "React · TipTap", action: <>기록에 집중할 수 있는 편집기와 캘린더·책·지도 형태의 탐색 화면을 만들고 <strong>분석 결과가 같은 경험 안에서 이어지게 했습니다.</strong></> },
+      { name: "Spring Boot · MyBatis", action: <>JWT 인증, 일기·사진·감정·키워드 API와 분석 서버 호출을 연결하고 <strong>데이터 변경 이벤트를 서비스 로직에 반영했습니다.</strong></> },
+      { name: "PostgreSQL", action: <>기존 MySQL 구조를 PostgreSQL로 옮기며 설정, 스키마와 쿼리를 함께 수정해 <strong>프로젝트 종료 후에도 실행 가능한 상태로 정비했습니다.</strong></> },
+      { name: "Python NLP · FastAPI", action: <>감정 분석 데이터와 파이프라인을 정리하고 API를 복구해 <strong>분석 결과가 Spring 백엔드를 거쳐 일기 상세에 저장·표시</strong>되게 했습니다. 개선 코드는 develop 브랜치에서 확인할 수 있습니다.</> },
+      { name: "Docker Compose", action: <><strong>React·Spring·NLP·챗봇·STT의 다섯 앱 서비스를 공통 네트워크로 구성했습니다.</strong> develop에는 PostgreSQL 컨테이너가 추가되어 있으며, 현재 실행 설정에는 DB 연결과 NLP 시작 명령의 정비가 필요합니다.</> },
     ],
     results: ["DB 전환과 백엔드 호환성 수정", "NLP 분석 파이프라인 복구 및 화면 연동", "기록·분석·회고로 이어지는 핵심 흐름 구현"],
     links: [

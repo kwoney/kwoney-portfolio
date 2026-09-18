@@ -165,6 +165,7 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
 .about-lead { max-width:900px; margin:0; font-family:"Noto Sans KR",sans-serif; font-size:clamp(28px,3vw,40px); line-height:1.45; letter-spacing:-.045em; }
 .about-copy { width:min(760px,100%); margin:54px 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:38px; }
 .about-copy p { margin:0; color:var(--muted); font-size:17px; line-height:1.9; }
+.about-copy strong,.project-overview strong,.tech-action p strong { color:var(--ink); font-weight:600; }
 .about .proof-grid { margin-top:64px; }
 .about .proof-card { min-height:230px; }
 .about .proof-card h3 { margin-top:52px; }
@@ -286,6 +287,7 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
 .experience-copy { max-width:820px; }
 .experience .eyebrow { font-size:16px; line-height:1.8; letter-spacing:.03em; color:#d2d0c7; }
 .experience-copy p { font-size:17px; line-height:1.9; color:#d2d0c7; }
+.experience-copy p strong { color:var(--paper); font-weight:600; }
 .timeline { margin-top:64px; border-top:1px solid var(--ink); }
 .timeline-row { display:grid; grid-template-columns:155px 205px minmax(0,1fr); gap:26px; padding:30px 0; border-bottom:1px solid var(--line); }
 .timeline-row time { color:#57594f; font-size:15px; line-height:1.8; letter-spacing:0; }
