@@ -9,6 +9,7 @@ const proofCards = [
 ];
 
 const timeline = [
+  { period: "2026.07 — NOW", title: "AI 풀스택 솔로프리너 과정", detail: "청년취업사관학교에서 1인 창업가 과정을 수강 중입니다. 2026년 10월 수료 예정입니다." },
   { period: "2026.03 — NOW", title: "KOZIT 기획·개발", detail: "커뮤니티 운영에서 발견한 문제를 모바일 제품으로 구현하고 출시를 준비하고 있습니다." },
   { period: "2025.10 — 2026.03", title: "AI·LLM 서비스 개발", detail: "Python 데이터 분석과 RAG·에이전트를 학습하고 복지나침반 프로젝트에 적용했습니다." },
   { period: "2025.02 — 2025.09", title: "풀스택 개발 전환", detail: "Java·Spring·React 기반 웹 개발을 학습하고 Mi.ary 등 팀 프로젝트를 수행했습니다." },
@@ -18,15 +19,15 @@ const timeline = [
 export default function Home() {
   return <main>
     <header className="nav-wrap"><nav className="nav shell" aria-label="주요 메뉴">
-      <a className="wordmark" href="#top" aria-label="권은영 — 처음으로"><strong>권은영</strong><span>KWON EUNYOUNG</span></a>
+      <a className="wordmark" href="#top" aria-label="권은영 — 처음으로"><strong>KWON EUNYOUNG</strong><span>권은영 · Developer</span></a>
       <div className="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a className="contact-nav" href="#contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>Contact</a><a className="github-link" href="https://github.com/kwoney" target="_blank" rel="noopener noreferrer" aria-label="권은영 GitHub (새 탭)" title="GitHub · kwoney"><svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor" aria-hidden="true"><path d="M12 .297a12 12 0 0 0-3.793 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.419-1.305.762-1.605-2.665-.303-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.006 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.922.431.372.815 1.102.815 2.222v3.293c0 .319.216.694.825.576A12.001 12.001 0 0 0 12 .297Z"/></svg></a></div>
     </nav></header>
 
     <section className="hero shell" id="top">
-      <div className="hero-kicker"><span className="status-dot" /> Available for new opportunities</div>
-      <h1>운영에서 발견한 문제를<br /><em>데이터와 제품</em>으로 연결합니다.</h1>
+      <div className="hero-kicker"><span className="status-dot" /> Developer · Product &amp; workflow</div>
+      <h1>복잡한 업무는 간결하게,<br /><em>필요한 서비스는 직접.</em></h1>
       <div className="hero-bottom">
-        <p className="hero-intro">사용자에게 필요한 흐름을 정의하고, 화면부터 데이터·AI·운영 구조까지 직접 구현하는 개발자 <strong>권은영</strong>입니다.</p>
+        <p className="hero-intro">사용자의 불편과 반복되는 업무를 분석해 더 효율적인 흐름을 설계합니다.<br className="desktop-break" /> 화면부터 데이터·AI·운영 도구까지 직접 구현하는 개발자 <strong>권은영</strong>입니다.</p>
         <div className="hero-actions"><a className="button primary" href="#projects">프로젝트 보기 <span>↓</span></a><a className="button text" href="mailto:qtag02@gmail.com">이메일 <Arrow /></a></div>
       </div>
     </section>
@@ -65,6 +66,11 @@ export default function Home() {
       <div className="section-content">
         <h2 id="journey-title">업무를 이해하는 사람에서<br />제품을 구현하는 사람으로.</h2>
         <div className="timeline">{timeline.map((item) => <article className="timeline-row" key={item.period}><time>{item.period}</time><h3>{item.title}</h3><p>{item.detail}</p></article>)}</div>
+        <div className="background-grid">
+          <article><p className="eyebrow">Activities</p><h3>개발 밖에서도 검증합니다</h3><ul><li><strong>2025 새싹 해커톤 본선 진출</strong><span>2025.11 · 최종 20위</span></li><li><strong>교통사고 위험 예측 AI 경진대회</strong><span>2025.11 · 상위 19%</span></li></ul></article>
+          <article><p className="eyebrow">Qualifications</p><h3>데이터와 업무를 이해하는 기반</h3><ul><li><strong>SQL 개발자(SQLD)</strong><span>2025.12 · 한국데이터산업진흥원</span></li><li><strong>한국환경공단 창립기념일 유공 포상</strong><span>2024 · 재직 중 수상</span></li></ul></article>
+          <article><p className="eyebrow">Education</p><h3>학습을 실제 구현으로</h3><ul><li><strong>동아대학교 의약생명공학과 졸업</strong><span>2017.08 · 경영학 부전공</span></li><li><strong>웹 풀스택 · AI/LLM 개발 과정 수료</strong><span>한국ICT인재개발원 · 청년취업사관학교</span></li></ul></article>
+        </div>
       </div>
     </section>
 
