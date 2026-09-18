@@ -54,9 +54,9 @@ export default function Home() {
 
     <section className="experience section shell" id="experience" aria-labelledby="experience-title">
       <div className="section-label"><span>03</span><p>Previous experience</p></div>
-      <div className="section-content"><p className="eyebrow">한국환경공단 · 회계 담당 · 2021.09—2025.02</p><h2 id="experience-title">회계 실무에서 발견한 문제를<br />시스템 개선으로 연결했습니다.</h2>
+      <div className="section-content"><p className="eyebrow">한국환경공단 · 회계 담당 · 2021.09—2025.02</p><h2 id="experience-title">현업의 요구를<br />개발 가능한 기준으로 정리했습니다.</h2>
         <div className="experience-grid"><div className="experience-numbers"><div><strong>84</strong><span>개 기관 규정 조사</span></div><div><strong>940</strong><span>매 출장카드 발급</span></div><div><strong>1,700<small>만 원</small></strong><span>연간 절감 효과</span></div></div>
-          <div className="experience-copy"><h3>회계 담당자로서,<br />업무 시스템 도입의 기획과 조율까지.</h3><p>법인카드 총괄, 지출·수입과 결산 업무를 담당했습니다. 회계 실무에서 쌓은 규정과 예외 처리에 대한 이해를 바탕으로 출장전용 법인카드 시스템 도입 과제를 맡았습니다.</p><p>84개 공공기관의 규정과 사례를 조사하고, 신청–승인–사용–정산–전표로 이어지는 업무 흐름과 화면별 요구사항을 정리해 개발업체에 전달했습니다.</p><p>지출 담당자·개발업체·은행·정보부서 사이에서 기준과 일정을 조율했습니다. 현업 담당자로서 요구사항 정의, 프로세스 설계, 이해관계자 조율 등 프로젝트 관리 역할을 함께 수행한 경험입니다.</p></div>
+          <div className="experience-copy"><h3>요구사항 정의부터<br />업무 흐름 설계와 협업 조율까지.</h3><p>한국환경공단 회계 담당자로 근무하며 출장전용 법인카드 시스템 도입의 현업 기획을 맡았습니다. 84개 공공기관의 규정과 사례를 조사해 계정과목·한도·예외 조건을 정리했습니다.</p><p>신청–승인–사용–정산–전표로 이어지는 업무 흐름을 화면별 요구사항으로 구체화하고, 지출 담당자·개발업체·은행·정보부서 사이에서 기준과 일정을 조율했습니다.</p><p>시스템 구현은 개발업체가 담당했고, 저는 업무 기준과 요구사항을 정의하고 전달하는 역할을 맡았습니다. 이 경험은 지금도 기능을 구현하기 전에 사용자 흐름과 데이터, 예외 조건을 먼저 정리하는 바탕이 됩니다.</p></div>
         </div>
       </div>
     </section>

@@ -180,7 +180,7 @@ const projects: Project[] = [
     results: ["DB 전환과 백엔드 호환성 수정", "NLP 분석 파이프라인 복구 및 화면 연동", "기록·분석·회고로 이어지는 핵심 흐름 구현"],
     links: [
       { label: "시연 영상", href: "https://drive.google.com/file/d/1PDj_LdoNj66AZjmuSa6tf8lralyz-sCh/view?usp=sharing", primary: true },
-      { label: "발표 자료", href: "https://drive.google.com/file/d/1P-jgKK6CTMB2os8mLj7Vec6LTl1AY-w7/view?usp=sharing" },
+      { label: "프로젝트 소개서(PPT)", href: "https://drive.google.com/file/d/1P-jgKK6CTMB2os8mLj7Vec6LTl1AY-w7/view?usp=sharing" },
     ],
     stack: ["React", "Spring Boot", "MyBatis", "PostgreSQL", "Python", "FastAPI", "Docker", "Kakao Map"],
     accent: "violet",
