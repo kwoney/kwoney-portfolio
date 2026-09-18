@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import ImplementationCases from "./ImplementationCases";
+import ProjectFlow from "./ProjectFlow";
 
 type Project = {
   id: string;
@@ -262,6 +263,8 @@ export default function ProjectTabs() {
           <p>{active.problem}</p>
         </div>
 
+        <ProjectFlow projectId={active.id} key={`flow-${active.id}`} />
+
         <section className="feature-section" aria-labelledby={`features-${active.id}`}>
           <div className="subsection-heading"><span>01</span><h4 id={`features-${active.id}`}>{active.id === "kozit" ? "직접 구현한 기능" : "주요 기능과 참여 영역"}</h4></div>
           {active.id !== "kozit" && <p className="contribution-note">팀 프로젝트의 기능 흐름을 함께 소개합니다. 위에 표시한 담당 영역을 중심으로 개발·개선·연동에 참여했으며, 팀 전체 기능의 단독 개발을 의미하지 않습니다.</p>}
@@ -289,7 +292,7 @@ export default function ProjectTabs() {
           <div className="result-grid">{active.results.map((result, index) => <article className="result-card" key={result}><span className="result-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><p>{result}</p></article>)}</div>
         </section>
 
-        <div className="stack-list" aria-label="사용 기술">{active.stack.map((item) => <span key={item}>{item}</span>)}</div>
+        <div className="stack-list" aria-label="사용 기술"><strong>사용 기술</strong>{active.stack.map((item) => <span key={item}>{item}</span>)}</div>
         <nav className="project-pagination" aria-label="다른 프로젝트 보기">
           <button type="button" onClick={() => selectProject(activeIndex - 1)}>← {projects[(activeIndex + projects.length - 1) % projects.length].name}</button>
           <span>{activeIndex + 1} / {projects.length}</span>
