@@ -131,7 +131,7 @@ const projects: Project[] = [
     results: ["정책 탐색·저장·일정 관리의 주요 화면 구현", "프론트엔드와 Django API를 함께 개발", "추천 결과와 자격 판단 근거를 사용자 화면에 연결"],
     links: [
       { label: "GitHub · 팀 저장소", href: "https://github.com/yongjunan111/4brain-welfare", primary: true },
-      { label: "발표자료(PPT)", href: "https://drive.google.com/file/d/1465OcwpIV2AGInZHLofJFlN11F6RTpFO/view?usp=sharing" },
+      { label: "프로젝트 소개서", href: "https://drive.google.com/file/d/1465OcwpIV2AGInZHLofJFlN11F6RTpFO/view?usp=sharing" },
       { label: "기획·개발 문서", href: "https://canyon-advantage-3a8.notion.site/Welfare-Compass-31b88193180e815ab542d78897bcdcc1" },
     ],
     stack: ["Next.js", "TypeScript", "Django", "PostgreSQL", "LangGraph", "MCP", "Kakao Map"],

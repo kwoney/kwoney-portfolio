@@ -185,15 +185,15 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
 .project-panel.violet { --project-accent:#9588ef; }
 .project-summary { padding:34px; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:26px; background:var(--project-accent); border:1px solid var(--ink); }
 .project-summary>div { min-width:0; }
-.project-summary .project-links { justify-self:end; justify-content:flex-end; max-width:340px; }
+.project-summary .project-links { justify-self:end; justify-content:flex-end; max-width:none; flex-wrap:nowrap; gap:10px; }
 .project-summary .project-links a { white-space:nowrap; }
 .project-summary h3 { margin:0; font-size:clamp(42px,4.5vw,60px); line-height:1.1; letter-spacing:-.05em; }
 .project-summary .eyebrow { color:rgba(22,23,20,.65); }
 .project-role { margin:18px 0 0; font-size:15px; line-height:1.8; font-weight:600; }
 .project-role span { margin:0 9px; opacity:.45; }
 .project-links { align-items:center; }
-.project-links a { padding:10px 0; }
-.project-links .primary-link { padding:12px 16px; border:1px solid var(--ink); background:var(--ink); color:var(--paper); }
+.project-summary .project-links a { display:inline-flex; align-items:center; min-height:46px; padding:11px 14px; border:1px solid rgba(22,23,20,.55); }
+.project-links .primary-link { border-color:var(--ink); background:var(--ink); color:var(--paper); }
 .project-overview { padding:52px 0; display:grid; grid-template-columns:1.15fr .85fr; gap:70px; border-bottom:1px solid var(--line); }
 .project-overview h4 { margin:0; font-size:clamp(26px,2.6vw,34px); line-height:1.45; letter-spacing:-.04em; }
 .project-overview p,.project-problem p { margin:0; color:var(--muted); font-size:15px; line-height:1.85; }
@@ -319,6 +319,7 @@ a:focus-visible, button:focus-visible { outline:2px solid currentColor; outline-
   .project-tabs::-webkit-scrollbar { display:none; }
   .project-tabs button { min-width:0; padding:16px 10px; }
   .project-summary { grid-template-columns:1fr; padding:26px; }
+  .project-summary .project-links { justify-self:start; justify-content:flex-start; flex-wrap:wrap; }
   .project-overview { grid-template-columns:1fr; gap:24px; }
   .flow-heading { grid-template-columns:1fr; gap:14px; }
   .flow-track { flex-direction:column; padding:18px; }
