@@ -240,9 +240,9 @@ export default function ProjectTabs() {
             <p className="eyebrow">{active.type}</p>
             <h3>{active.name}</h3>
             <p className="project-role">{active.period}<span>·</span>{active.role}</p>
+            {active.id === "miary" && <p className="private-label">코드 비공개 · develop 기준</p>}
           </div>
           <div className="project-links">
-            {active.id === "miary" && <span className="private-label">코드 비공개 · develop 기준</span>}
             {active.links.map((link) => (
               <a className={link.primary ? "primary-link" : ""} href={link.href} target="_blank" rel="noreferrer" key={link.label}>
                 {link.label} <Arrow />
@@ -283,7 +283,7 @@ export default function ProjectTabs() {
 
         <section className="result-section" aria-labelledby={`result-${active.id}`}>
           <div className="subsection-heading"><span>03</span><h4 id={`result-${active.id}`}>구현 결과</h4></div>
-          <div className="result-grid">{active.results.map((result) => <p key={result}>{result}</p>)}</div>
+          <div className="result-grid">{active.results.map((result, index) => <article className="result-card" key={result}><span className="result-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><p>{result}</p></article>)}</div>
         </section>
 
         <div className="stack-list" aria-label="사용 기술">{active.stack.map((item) => <span key={item}>{item}</span>)}</div>
