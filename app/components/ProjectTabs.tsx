@@ -129,7 +129,10 @@ const projects: Project[] = [
       { name: "LangGraph · MCP", action: <>정보 추출·검색·자격 확인을 각각 도구로 분리하고, <strong>대화 상태에 따라 필요한 도구를 호출하는 에이전트</strong>를 서비스에 연동했습니다.</> },
     ],
     results: ["정책 탐색·저장·일정 관리의 주요 화면 구현", "프론트엔드와 Django API를 함께 개발", "추천 결과와 자격 판단 근거를 사용자 화면에 연결"],
-    links: [{ label: "GitHub · 팀 저장소", href: "https://github.com/yongjunan111/4brain-welfare", primary: true }],
+    links: [
+      { label: "GitHub · 팀 저장소", href: "https://github.com/yongjunan111/4brain-welfare", primary: true },
+      { label: "기획·개발 문서", href: "https://canyon-advantage-3a8.notion.site/Welfare-Compass-31b88193180e815ab542d78897bcdcc1" },
+    ],
     stack: ["Next.js", "TypeScript", "Django", "PostgreSQL", "LangGraph", "MCP", "Kakao Map"],
     accent: "green",
   },
