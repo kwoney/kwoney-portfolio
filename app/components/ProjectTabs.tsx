@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type Project = {
   id: string;
@@ -177,7 +177,7 @@ const projects: Project[] = [
       { name: "Docker Compose", action: "React·Spring·NLP·챗봇·STT의 다섯 앱 서비스를 공통 네트워크로 구성했습니다. develop에는 PostgreSQL 컨테이너가 추가되어 있으며, 현재 실행 설정에는 DB 연결과 NLP 시작 명령의 정비가 필요합니다." },
     ],
     results: ["DB 전환과 백엔드 호환성 수정", "NLP 분석 파이프라인 복구 및 화면 연동", "기록·분석·회고로 이어지는 핵심 흐름 구현"],
-    links: [{ label: "개선 코드 · develop", href: "https://github.com/kwoney/miary/tree/develop", primary: true }, { label: "GitHub", href: "https://github.com/kwoney/miary" }],
+    links: [],
     stack: ["React", "Spring Boot", "MyBatis", "PostgreSQL", "Python", "FastAPI", "Docker", "Kakao Map"],
     accent: "violet",
   },
@@ -188,11 +188,21 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 export default function ProjectTabs() {
   const [activeId, setActiveId] = useState(projects[0].id);
   const active = projects.find((project) => project.id === activeId) ?? projects[0];
+  const browserRef = useRef<HTMLDivElement>(null);
+  const activeIndex = projects.indexOf(active);
+  const selectProject = (index: number) => {
+    const next = projects[(index + projects.length) % projects.length];
+    setActiveId(next.id);
+    requestAnimationFrame(() => {
+      browserRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+      document.getElementById(`tab-${next.id}`)?.focus({ preventScroll: true });
+    });
+  };
 
   return (
-    <div className="project-browser">
+    <div className="project-browser" ref={browserRef}>
       <div className="project-tabs" role="tablist" aria-label="프로젝트 선택">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <button
             type="button"
             role="tab"
@@ -200,7 +210,12 @@ export default function ProjectTabs() {
             aria-controls={`panel-${project.id}`}
             id={`tab-${project.id}`}
             className={active.id === project.id ? "active" : ""}
-            onClick={() => setActiveId(project.id)}
+            tabIndex={active.id === project.id ? 0 : -1}
+            onClick={() => selectProject(index)}
+            onKeyDown={(event) => {
+              const target = event.key === "ArrowRight" ? index + 1 : event.key === "ArrowLeft" ? index - 1 : event.key === "Home" ? 0 : event.key === "End" ? projects.length - 1 : null;
+              if (target !== null) { event.preventDefault(); selectProject(target); }
+            }}
             key={project.id}
           >
             <span>{project.index}</span>
@@ -223,6 +238,7 @@ export default function ProjectTabs() {
             <p className="project-role">{active.period}<span>·</span>{active.role}</p>
           </div>
           <div className="project-links">
+            {active.id === "miary" && <span className="private-label">코드 비공개 · develop 기준</span>}
             {active.links.map((link) => (
               <a className={link.primary ? "primary-link" : ""} href={link.href} target="_blank" rel="noreferrer" key={link.label}>
                 {link.label} <Arrow />
@@ -266,8 +282,12 @@ export default function ProjectTabs() {
           <div className="result-grid">{active.results.map((result) => <p key={result}>{result}</p>)}</div>
         </section>
 
-        {active.id === "miary" && <div className="code-evidence"><h4>개선 코드 확인</h4><a href="https://github.com/kwoney/miary/commit/041502b" target="_blank" rel="noreferrer">PostgreSQL 전환 ↗</a><a href="https://github.com/kwoney/miary/commit/e6349ef" target="_blank" rel="noreferrer">NLP 파이프라인 연동 ↗</a><a href="https://github.com/kwoney/miary/commit/e68bdbc" target="_blank" rel="noreferrer">일기 상세에 분석 결과 표시 ↗</a></div>}
         <div className="stack-list" aria-label="사용 기술">{active.stack.map((item) => <span key={item}>{item}</span>)}</div>
+        <nav className="project-pagination" aria-label="다른 프로젝트 보기">
+          <button type="button" onClick={() => selectProject(activeIndex - 1)}>← {projects[(activeIndex + projects.length - 1) % projects.length].name}</button>
+          <span>{activeIndex + 1} / {projects.length}</span>
+          <button type="button" onClick={() => selectProject(activeIndex + 1)}>{projects[(activeIndex + 1) % projects.length].name} →</button>
+        </nav>
       </article>
     </div>
   );

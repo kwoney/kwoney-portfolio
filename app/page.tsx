@@ -19,7 +19,7 @@ export default function Home() {
   return <main>
     <header className="nav-wrap"><nav className="nav shell" aria-label="주요 메뉴">
       <a className="wordmark" href="#top" aria-label="권은영 — 처음으로"><strong>권은영</strong><span>KWON EUNYOUNG</span></a>
-      <div className="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a><a className="github-link" href="https://github.com/kwoney" target="_blank" rel="noopener noreferrer" aria-label="권은영 GitHub (새 탭)" title="GitHub · kwoney"><svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor" aria-hidden="true"><path d="M12 .297a12 12 0 0 0-3.793 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.419-1.305.762-1.605-2.665-.303-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.006 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.922.431.372.815 1.102.815 2.222v3.293c0 .319.216.694.825.576A12.001 12.001 0 0 0 12 .297Z"/></svg></a></div>
+      <div className="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a className="contact-nav" href="#contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>Contact</a><a className="github-link" href="https://github.com/kwoney" target="_blank" rel="noopener noreferrer" aria-label="권은영 GitHub (새 탭)" title="GitHub · kwoney"><svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor" aria-hidden="true"><path d="M12 .297a12 12 0 0 0-3.793 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.419-1.305.762-1.605-2.665-.303-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.006 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.922.431.372.815 1.102.815 2.222v3.293c0 .319.216.694.825.576A12.001 12.001 0 0 0 12 .297Z"/></svg></a></div>
     </nav></header>
 
     <section className="hero shell" id="top">
@@ -36,7 +36,7 @@ export default function Home() {
       <div className="section-content about-content">
         <p className="about-lead" id="about-title">저는 <strong>현업의 복잡한 문제를 이해하고, 사용자가 실제로 쓸 수 있는 시스템으로 만드는 개발자</strong>입니다.</p>
         <div className="about-copy">
-          <p>한국환경공단에서 회계와 시스템 기획을 담당하며 규정, 사용자 요구, 개발 조건이 서로 다른 상황을 조율했습니다. 84개 기관의 규정을 분석해 출장카드 업무 흐름을 설계했고, 연간 약 1,700만 원의 절감 효과로 연결했습니다.</p>
+          <p>한국환경공단에서 회계와 시스템 기획을 담당하며 현업의 요구를 개발자가 구현할 수 있는 업무 흐름과 데이터 기준으로 정리했습니다. 서로 다른 부서와 개발업체 사이에서 요구사항을 조율하는 경험을 쌓았습니다.</p>
           <p>이 경험을 계기로 직접 제품을 구현하는 개발자가 되었습니다. 지금은 프론트엔드와 백엔드의 경계를 나누기보다, 문제 해결에 필요한 기술을 선택해 끝까지 연결하는 방식으로 일합니다.</p>
         </div>
         <div className="proof-grid">{proofCards.map((card) => <article className="proof-card" key={card.number}><span>{card.number}</span><h3>{card.title}</h3><p>{card.body}</p></article>)}</div>
@@ -72,3 +72,4 @@ export default function Home() {
     <footer className="footer shell"><p>© 2026 Kwon Eunyoung</p><a href="#top">Back to top ↑</a></footer>
   </main>;
 }
+
