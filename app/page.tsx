@@ -29,7 +29,7 @@ export default function Home() {
       <h1>복잡한 업무는 간결하게,<br /><em>필요한 서비스는 직접.</em></h1>
       <div className="hero-bottom">
         <p className="hero-intro">사용자의 불편과 반복되는 업무를 분석해 더 효율적인 흐름을 설계합니다.<br className="desktop-break" /> 화면부터 데이터·AI·운영 도구까지 직접 구현하는 개발자 <strong>권은영</strong>입니다.</p>
-        <div className="hero-actions"><a className="button primary" href="#projects">프로젝트 보기 <span>↓</span></a><a className="button text" href="mailto:qtag02@gmail.com"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>이메일</a></div>
+        <div className="hero-actions"><a className="button primary" href="#projects">프로젝트 보기 <span>↓</span></a><a className="button text email-link" href="mailto:qtag02@gmail.com">이메일</a></div>
       </div>
     </section>
 
@@ -57,7 +57,7 @@ export default function Home() {
       <div className="section-label"><span>03</span><p>Previous experience</p></div>
       <div className="section-content"><p className="eyebrow">한국환경공단 · 회계 담당 · 2021.09—2025.02</p><h2 id="experience-title">현업의 요구를<br />개발 가능한 기준으로 정리했습니다.</h2>
         <div className="experience-grid"><div className="experience-numbers"><div><strong>84<small>개</small></strong><span>기관 규정 조사</span></div><div><strong>940<small>매</small></strong><span>출장카드 발급</span></div><div><strong>1,700<small>만 원</small></strong><span>연간 절감 효과</span></div></div>
-          <div className="experience-copy"><h3>요구사항 정의부터<br />업무 흐름 설계와 협업 조율까지.</h3><p>한국환경공단 회계 담당자로 근무하며 출장전용 법인카드 시스템 도입의 현업 기획을 맡았습니다. 84개 공공기관의 규정과 사례를 조사해 계정과목·한도·예외 조건을 정리했습니다.</p><p>신청–승인–사용–정산–전표로 이어지는 업무 흐름을 화면별 요구사항으로 구체화하고, 지출 담당자·개발업체·은행·정보부서 사이에서 기준과 일정을 조율했습니다.</p><p>시스템 구현은 개발업체가 담당했고, 저는 업무 기준과 요구사항을 정의하고 전달하는 역할을 맡았습니다. 이 경험은 지금도 기능을 구현하기 전에 사용자 흐름과 데이터, 예외 조건을 먼저 정리하는 바탕이 됩니다.</p></div>
+          <div className="experience-copy"><h3>요구사항 정의부터<br />업무 흐름 설계와 협업 조율까지.</h3><p>한국환경공단 회계 담당자로 근무하며 출장전용 법인카드 시스템 도입의 현업 기획을 맡았습니다. 84개 공공기관의 규정과 사례를 조사해 계정과목·한도·예외 조건을 정리했습니다.</p><p>신청–승인–사용–정산–전표로 이어지는 업무 흐름을 화면별 요구사항으로 구체화하고, 지출 담당자·개발업체·은행·정보부서 사이에서 기준과 일정을 조율했습니다.</p><p>시스템을 구현하는 개발업체와 현업 사이에서 업무 기준과 요구사항을 정의하고 전달하는 역할을 맡았습니다. 업무의 맥락을 사용자 흐름·데이터·예외 조건으로 구체화해 개발 가능한 요구사항으로 전달할 수 있습니다.</p></div>
         </div>
       </div>
     </section>
