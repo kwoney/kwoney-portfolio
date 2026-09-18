@@ -178,7 +178,10 @@ const projects: Project[] = [
       { name: "Docker Compose", action: "React·Spring·NLP·챗봇·STT의 다섯 앱 서비스를 공통 네트워크로 구성했습니다. develop에는 PostgreSQL 컨테이너가 추가되어 있으며, 현재 실행 설정에는 DB 연결과 NLP 시작 명령의 정비가 필요합니다." },
     ],
     results: ["DB 전환과 백엔드 호환성 수정", "NLP 분석 파이프라인 복구 및 화면 연동", "기록·분석·회고로 이어지는 핵심 흐름 구현"],
-    links: [],
+    links: [
+      { label: "시연 영상", href: "https://drive.google.com/file/d/1DLprO-3Kls_pA9kU0_uYBFrSkMKA9DC5/view?usp=sharing", primary: true },
+      { label: "발표 자료", href: "https://drive.google.com/file/d/1P-jgKK6CTMB2os8mLj7Vec6LTl1AY-w7/view?usp=sharing" },
+    ],
     stack: ["React", "Spring Boot", "MyBatis", "PostgreSQL", "Python", "FastAPI", "Docker", "Kakao Map"],
     accent: "violet",
   },
