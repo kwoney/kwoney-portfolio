@@ -288,6 +288,8 @@ section[id] { scroll-margin-top:80px; }
   .desktop-break { display:none; }
   .hero-kicker { font-size:10px; letter-spacing:.05em; }
   .hero-actions { flex-direction:row; }
+  .hero-actions .button { width:auto; white-space:nowrap; padding:0 16px; gap:16px; }
+  .hero-actions .button.primary { flex:0 0 auto; }
   .wordmark strong { font-size:15px; }
   .wordmark span { font-size:10px; }
   .about-lead { font-size:30px; }
