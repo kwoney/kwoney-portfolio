@@ -68,7 +68,7 @@ export default function Home() {
         <h2 id="journey-title">업무를 이해하는 사람에서<br />제품을 구현하는 사람으로.</h2>
         <div className="timeline">{timeline.map((item) => <article className="timeline-row" key={item.period}><time>{item.period}</time><h3>{item.title}</h3><p>{item.detail}</p></article>)}</div>
         <div className="background-grid">
-          <article><p className="eyebrow">Activities</p><h3>개발 밖에서도 검증합니다</h3><ul><li><strong>2025 새싹 해커톤 본선 진출</strong><span>2025.11 · 최종 20위</span></li><li><strong>교통사고 위험 예측 AI 경진대회</strong><span>2025.11 · 상위 19%</span></li><li><strong>모두의 창업 소셜벤처리그 서류심사 통과</strong><span>2026.08 · 기술보증기금</span></li></ul></article>
+          <article><p className="eyebrow">Activities</p><h3>개발 밖에서도 검증합니다</h3><ul><li><strong>2025 새싹 해커톤 본선 진출</strong><span>2025.11 · 최종 20위</span></li><li><strong>교통사고 위험 예측 AI 경진대회</strong><span>2025.11 · 상위 19%</span></li></ul></article>
           <article><p className="eyebrow">Qualifications</p><h3>데이터와 업무를 이해하는 기반</h3><ul><li><strong>SQL 개발자(SQLD)</strong><span>2025.12 · 한국데이터산업진흥원</span></li><li><strong>한국환경공단 창립기념일 유공 포상</strong><span>2024 · 재직 중 수상</span></li></ul></article>
           <article><p className="eyebrow">Education</p><h3>학습을 실제 구현으로 연결했습니다</h3><ul><li><strong>웹 풀스택 개발 과정 수료</strong><span>한국ICT인재개발원 · 2025.02–2025.09</span></li><li><strong>AI·LLM 서비스 개발 과정 수료</strong><span>청년취업사관학교 · 2025.10–2026.03</span></li></ul></article>
         </div>
