@@ -72,7 +72,7 @@ const projects: Project[] = [
       { name: "Toss Payments", action: <>주문·결제·환불·정산 상태를 분리했습니다. <strong>결제 승인 서버 검증과 중복 웹훅 방지</strong>, 가격·일정 잠금과 수수료 스냅샷을 적용했습니다.</> },
       { name: "Amplitude · Sentry", action: <>가입부터 모임 참여까지 주요 이벤트를 정의하고, <strong>분석 코드의 실패가 앱 사용을 막지 않도록</strong> 오류를 분리해 수집했습니다.</> },
     ],
-    results: ["단독으로 모바일 앱과 백엔드·운영 구조 완성", "약 300명 커뮤니티 운영 경험을 제품 요구사항에 반영", "2026.08 · 모두의 창업 소셜벤처리그 서류 합격"],
+    results: ["단독으로 모바일 앱과 백엔드·운영 구조 완성", "약 300명 커뮤니티 운영 경험을 제품 요구사항에 반영", "2026.08 · 모두의 창업 소셜벤처리그 서류심사 통과"],
     links: [
       { label: "웹사이트", href: "https://kozit.app", primary: true },
       { label: "시연 영상", href: "https://youtube.com/shorts/rlK_qPIgyKg" },
